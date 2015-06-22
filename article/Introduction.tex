@@ -1,0 +1,67 @@
+%!TEX root = Main.tex
+
+\section{Introduction}
+
+
+\lipsum[15] See table \tab{SoilParam}
+
+
+% \citet{Lawrence2008}
+
+\begin{table}[h!tbc]
+\caption{Soil parameters as used in CLM for two typical soil types and a pure organic soil. \label{tab:SoilParam}}
+{
+\centering
+\begin{tabular}{l c c c c c c c c}
+\toprule
+Soil type & $\lambda_{\text{s}}$ & $\lambda_{\text{sat}}$ & $\lambda_{\text{dry}}$ & $c_{\text{s}}$ & $\Theta_{\text{sat}}$ & $k_{\text{sat}}$ & $\Psi_{\text{sat}}$ & $b$ \\
+& \multicolumn{3}{c}{\capunit{\watt}} &\capunit{\giga\joule\per\meter\cubed\per\kelvin }&\capunit{-}&\capunit{\milli\meter\per\second}&\capunit{\milli\meter}&\capunit{-} \\
+\midrule
+Sand$^*$  & 8.61 & 3.12 & 0.27 & 2.14 & 0.37 & 0.023 & –47.3 & 3.4 \\
+Clay$^\dag$ & 4.54 & 1.78 & 0.20 & 2.31 & 0.46 & 0.002 & –633.0 & 12.1 \\
+Peat$^\ddag$ & 0.25 & 0.55 & 0.05 & 2.5 & 0.9 & 0.100 & –10.3 & 2.7 \\
+\bottomrule
+\end{tabular}
+
+} %end scope of \centering
+
+\footnotesize{\vspace*{1ex}$\lambda_{\text{s}}$ is the thermal conductivity of soil solids, $\lambda_{\text{sat}}$ is the unfrozen saturated thermal conductivity, $\lambda_{\text{dry}}$ is the dry soil thermal conductivity, $c_{\text{s}}$ is the soil solid heat capacity, $\Theta_{\text{sat}}$ is the saturated volumetric water content (porosity), $k_{\text{sat}}$ is the saturated hydraulic conductivity, $\Psi_{\text{sat}}$ is the saturated matric potential, and $b$ is the Clapp and Hornberger parameter.
+$^*$\SI{92}{\percent} sand, \SI{5}{\percent} silt, \SI{3}{\percent} clay. $^\dag$\SI{22}{\percent} sand, \SI{20}{\percent} silt, \SI{58}{\percent} clay. $^\ddag$\SI{100}{\percent} soil carbon.}
+
+\end{table}
+
+
+\lipsum[16]
+
+\begin{table}[h!tbc]
+\caption{Fitting GEV to the observations (excluding 2010) with time as covariate. 
+The time dependency is modelled linearly as e.g.\ $\mu = \mu_0 + \mu_1\cdot t$, where t denotes the year of the measurement.
+Note: due to computational reasons, time is given as 50...109, corresponding to the years 1950...2009.
+$\ell(\boldsymbol{\cdot})$ denotes the log-likelihood of the given parameter set $\boldsymbol{\theta}$ and AIC the Akaike information criterion.}
+{
+\centering
+\begin{tabular}{l
+S[table-format=2.1]@{\,}
+S[table-format=+1.1e-1,table-space-text-post=$\cdot t$]
+S[table-format=2.1]@{ }
+S[table-format=+1.1e-1,table-space-text-post=$\cdot t$]
+S[table-format=2.2]@{ }
+S[table-format=+1.1e-1,table-space-text-post=$\cdot t$]
+S[table-format=-3.1]
+S[table-format=3.1]
+}
+\toprule
+Time         & \multicolumn{2}{c}{$\mu$} & \multicolumn{2}{c}{$\sigma$} & \multicolumn{2}{c}{$\xi$} & {$\ell(\boldsymbol{\theta})$} & AIC \\
+\midrule
+$\mu$, $\sigma$ \& $\xi$ & 27.6 & +2.1e-2 $\cdot t$ & 2.4 & -1.0e-02  $\cdot t$  & 0.54 & -3.9e-03 $\cdot t$ & -112.8 & 237.6 \\
+$\mu$ \& $\sigma$        & 27.7 & +2.1e-2 $\cdot t$ & 1.8 & -2.3e-03  $\cdot t$  & 0.24 &                    & -113.1 & 236.3 \\
+$\mu$\textsuperscript{1} & 27.8 & +1.9e-2 $\cdot t$ & 1.6 &                      & 0.24 &                    & -113.2 & 234.4 \\
+None                 & 29.3 &                   & 1.6  &                     & 0.24 &                    & -114.5 & 234.9 \\
+\bottomrule
+\end{tabular}
+
+} %end scope of \centering
+\footnotesize{\vspace*{1ex} \textsuperscript{1} corresponding to $\mu=\SI{29.0}{\celsius}$ in 1965, $\mu=\SI{29.8}{\celsius}$ in 2005 and $\mu=\SI{29.9}{\celsius}$ in 2010.}
+\end{table}
+
+

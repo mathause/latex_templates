@@ -1,0 +1,93 @@
+%!TEX root = Main.tex
+
+%define graphics path:
+\graphicspath{{./figures/}}
+
+
+
+\setlength{\unitlength}{\textwidth}
+%% DEFINE NEW SI UNITS
+
+
+\DeclareSIUnit{\Wm}{\watt \per \meter \squared}
+
+
+%Brakets (or square Brackets) 
+\DeclareSIUnit{\rB}{\ensuremath{]}}
+\DeclareSIUnit{\lB}{\ensuremath{[}}
+
+%Parantheses
+\DeclareSIUnit{\rP}{\ensuremath{)}}
+\DeclareSIUnit{\lP}{\ensuremath{(}}
+
+\DeclareSIUnit{\div}{\ensuremath{/}}
+
+\sisetup{separate-uncertainty=true}
+
+\sisetup{detect-all=true}
+\sisetup{retain-explicit-plus=true}
+
+% good looking units in captions
+\newcommand{\capunit}[1]{\si[detect-all=false]{\lB#1\rB}}
+
+
+% example commands
+% \newcommand{\p}[1]{\ensuremath{\text{p}_{#1}}} %percentile
+% \newcommand{\sunel}{\ensuremath{\theta_e}\xspace}
+% \newcommand{\KZ}{K\&Z\xspace}
+
+
+% dot for f(.)
+\newcommand*{\edot}{\makebox[1ex]{\textbf{$\cdot$}}}%
+
+\newcommand{\hl}[2]{\ensuremath{\text{#1}_{\text{#2}}}}
+
+\newcommand{\gridRes}[2]{\SI{#1}{\degree} $\times$ \SI{#2}{\degree}}
+
+%% COMMANDS
+
+
+% \fig{(b)}{fig_name}
+\newcommand{\fig}[2][]{%
+Figure~\ref{fig:#2}\ifthenelse{\isempty{#1}}{}{(#1)}%
+}
+
+%\newcommand{\fig}[1]{Figure~\ref{fig:#1}}
+%\eqref{} defined by amsmath
+\newcommand{\tab}[1]{Table~\ref{tab:#1}}
+\newcommand{\sect}[1]{Section~\ref{#1}}
+\newcommand{\chap}[1]{Chapter~\ref{#1}}
+
+
+%% TABLES
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% FIGURES
+\newcommand{\singlefig}[2]{%
+\begin{figure}[h!tbc]
+        \centering
+        \includegraphics[width=\textwidth]{#1}
+			\caption{#2 \label{fig:#1}}
+\end{figure}
+}
+
+
+
+
+\newcommand{\doublefig}[4]{%
+\begin{figure}[h!tbc]
+        \centering
+              \begin{minipage}[t]{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{#1}
+				\captionof{figure}{#2 \label{fig:#1}}
+        \end{minipage}%
+		\hfill
+\begin{minipage}[t]{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{#3}
+				\captionof{figure}{#4 \label{fig:#3}}
+        \end{minipage}%
+\end{figure}
+}

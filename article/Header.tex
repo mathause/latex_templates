@@ -1,0 +1,213 @@
+%!TEX root = Main.tex
+\documentclass[a4paper,11pt,twoside]{article}  %{report} / article
+% Alternative Options:
+% Paper Size: a4paper / a5paper / b5paper / letterpaper / legalpaper / executivepaper
+% Duplex: oneside / twoside
+% Base Font Size: 10pt / 11pt / 12pt
+ 
+%% Language
+\usepackage[english]{babel} %francais, polish, spanish, 
+\usepackage[T1]{fontenc}	   %character encoding of the .pdf files (?)
+\usepackage[utf8]{inputenc} %character encoding of the .tex files
+
+\usepackage{lipsum}
+
+%\usepackage{lmodern} %Type1-font for non-english texts and characters
+
+%\usepackage{mathpazo}
+\usepackage{setspace}
+
+\usepackage{palatino}
+\usepackage{helvet}                 %load a helvetica font
+
+\usepackage[EULERGREEK]{sansmath}	%sans serif font for math mode
+
+\usepackage{marvosym} %symbols
+
+\usepackage{microtype}  %character spacing usw. (load after font)
+
+
+\usepackage{fixltx2e}   % fixes some small errors in LaTeX2e
+
+%% Page Format
+\usepackage[a4paper]{geometry}
+%\geometry{left=20mm, right=20mm, bindingoffset=10mm}
+\geometry{left=20mm, right=20mm}
+\geometry{tmargin=33mm,bmargin=30mm}
+
+%\usepackage{setspace}	%Linespacing
+%\singlespacing (default) // \onehalfspacing // \doublespacing // \linespread{2}
+
+%% DEFINE ACRONYMS
+%\usepackage[printonlyused, nohyperlinks,nolist]{acronym} %the acronym package
+
+%\usepackage{makeidx}
+%\makeindex
+
+
+%% Packages for Graphics & Figures
+\usepackage{graphicx}		%For loading graphic files
+
+%\usepackage{epstopdf}		%To automatically convert .eps to .pdf graphics
+\usepackage{xcolor}			%color handling
+
+% tikz -> Generate vector graphics from within LaTeX
+\usepackage{tikz}
+%\usepackage{tikz-3dplot}
+%\usetikzlibrary{arrows,matrix,positioning,fit,petri,calc}
+%\usetikzlibrary{chains}
+%\usetikzlibrary{decorations}
+
+% pgfplots -> make plots with tikz
+\usepackage{pgfplots}
+%\pgfplotsset{compat=newest}
+%\usetikzlibrary{pgfplots.statistics}
+%\usetikzlibrary{plotmarks}
+
+% set sans serif font for pgf plots
+%\pgfplotsset{
+%  tick label style = {font=\sansmath\sffamily},
+%  every axis label = {font=\sansmath\sffamily},
+%  legend style = {font=\sansmath\sffamily},
+%  label style = {font=\sansmath\sffamily}
+%}
+
+%\pgfplotsset{
+%tick label style={font=\scriptsize},
+%label style={font=\small},
+%legend style={font=\tiny}
+%}
+
+%\pgfkeys{
+%   /pgf/number format/.cd, 
+%      set decimal separator={.},
+%      set thousands separator={}
+%}
+
+
+%\pgfplotsset{colormap={redblue}{color(0cm)=(green) color(0.1cm)=(blue) color(2.5cm)=(white) color(4.9cm)=(red) color(5cm)=(yellow)}}
+
+
+
+% redefine how figure & table captions look
+\usepackage[hypcap]{caption}
+\captionsetup{font=small,labelfont=bf,textfont=it}
+
+% (a) (b) subcaptions for figures
+% \usepackage{subcaption}
+
+% figures with the caption to one side
+\usepackage{sidecap}
+
+\usepackage{float} %the H command
+
+% "LaTeX => PDF" allows: .jpg  .png  .pdf  .mps
+% "LaTeX => DVI", "LaTeX => PS" und "LaTeX => PS => PDF": allow the following formats: .eps  .ps  .bmp  .pict  .pntg
+
+
+%% Biblography
+\usepackage{natbib}
+
+
+%backend=bibtex
+%backend=biber
+%\usepackage[backend=bibtex,natbib=true,style=apa,hyperref=true,backref=true,            block=none]{biblatex}
+%\addbibresource{Bibliography.bib}% 
+
+
+
+%% TABLES
+\usepackage{tabularx}		% for fancy tables
+\usepackage{multirow}		%for multiple rows in a table
+\usepackage{multicol} 		%multible columns
+\usepackage{booktabs}		%for top/ midrule usw.
+\usepackage{array}			%more possibilities for tables
+
+
+%% SCIENCE
+\usepackage{mathtools}			% loads amsmath
+\usepackage{siunitx}				% SI units
+% \usepackage[version=3]{mhchem}	% For chemical formulae
+
+% Programming
+% \usepackage{listings}	%Code environnements
+% \usepackage[framed,numbered,autolinebreaks]{mcode} %for matlab looking code
+
+% auto detect end of macro
+\usepackage{xspace}
+
+\usepackage{xifthen}
+
+
+% Headers and Footers
+
+%\usepackage{floatpag} %for \(this)floatpagestyle
+
+%get the number of the 'part' in the header
+%\newcommand*\parttitle{}
+%\let\origpart\part
+%\renewcommand*{\part}[2][]{%
+%   \ifx\\#1\\% optional argument not present?
+%      \origpart{#2}\thispagestyle{empty}%
+%      \renewcommand*\parttitle{\thepart~#2}%
+%   \else
+%      \origpart[#1]{#2}\thispagestyle{empty}%
+%      \renewcommand*\parttitle{\thepart~#1}%
+%   \fi
+%}
+
+\usepackage{fancyhdr}
+%\usepackage{emptypage}
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+
+\fancyhf{}
+%\renewcommand{\part}{\part\thispagestyle{empty}}
+\pagestyle{fancy}
+
+%\renewcommand{\chaptermark}[1]{\uppercase{\markboth{#1}{}}}
+\renewcommand{\sectionmark}[1]{\uppercase{\markboth{#1}{}}}
+
+%\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+%\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+
+\addtolength{\headheight}{2pt}
+%\fancyhead[LE,RO]{\thepage}
+%\fancyhead[LO,RE]{{\parttitle}}
+%\fancyhead[LO,RE]{\thechapter~{\leftmark}}
+\fancyhead[C]{\textsc{\leftmark}}
+%\fancyhead[CO]{\rightmark}
+\fancyfoot[C]{\thepage}
+%\fancyfoot[LO,RE]{\monthword{\the\month}~\the\year}
+%\renewcommand{\headrulewidth}{0.5pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+%\renewcommand{\footrulewidth}{0.5pt}
+
+
+
+% REDEFINE STYLE OF EMPTY PAGES (CLEARDOUBLEPAGE)
+% only page number
+
+% \leardoublepage -> style: plain
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}
+%\vspace*{\fill}
+%\begin{center}
+%This page intentionally contains only this sentence.
+%\end{center}
+%\vspace{\fill}
+\thispagestyle{plain}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+
+%footnotes look crappy with \raggedbottom
+\usepackage[bottom]{footmisc}
+
+
+
+%stops a the contents of a unfilled page being spread over the whole page but confines it to the upper part
+\raggedbottom

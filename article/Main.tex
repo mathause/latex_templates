@@ -1,0 +1,70 @@
+
+\input{Header}
+
+
+\input{Definitions}
+
+\numberwithin{figure}{subsection}
+\numberwithin{table}{section}
+
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+% the automatic references (ought to be the last package)
+\usepackage[plainpages=false,pdfpagelabels]{hyperref}
+\begin{document}
+%\input{DefinitionAcronyms}
+
+\input{TitlePage}
+
+\setcounter{page}{1}
+\pagenumbering{roman} 
+\pagestyle{plain}
+\input{Abstract}
+\cleardoublepage
+
+
+\tableofcontents 
+\cleardoublepage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\input{Introduction}
+%\cleardoublepage
+%\input{Methods}
+\cleardoublepage
+\input{Results}
+%\cleardoublepage
+%\input{ConclusionOutlook}
+%%\cleardoublepage
+%\vfill
+%\input{Various} % -> declaration of originality, acknowledgement
+%\cleardoublepage
+%\appendix
+%\input{Appendix}
+
+%\setcounter{figure}{0}
+%\clearpage
+%\input{MethodsAppendix}
+%\input{AddMaterial}
+%\pagestyle{plain}
+%% The Bibliography
+%\cleardoublepage
+%\clearpage
+%\phantomsection
+%\addcontentsline{toc}{section}{References} %'Bibliography' into toc
+%\bibliographystyle{ametsoc} %Style of Bibliography
+%\bibliographystyle{atmos} %Style of Bibliography
+
+%\bibliographystyle{apa}
+%\scriptsize
+%\renewcommand{\refname}{}
+%\bibliography{./../Bibliography} %You need a file 'literature.bib' for this.
+
+
+%% Appendix
+%\appendix
+
+
+
+\end{document}
